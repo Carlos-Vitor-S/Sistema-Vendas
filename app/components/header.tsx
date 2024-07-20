@@ -4,11 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export function Header() {
   return (
-    <View style={styles.headerContainer}>
-      <SafeAreaView>
+    <SafeAreaView>
+      <View>
         <Text>Title</Text>
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: "100%",
     backgroundColor: "blue",
-    height: 100,
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },

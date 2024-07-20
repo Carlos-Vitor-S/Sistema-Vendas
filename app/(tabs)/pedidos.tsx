@@ -1,11 +1,17 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
+import HeaderFooterCard from "../components/headerFooterCard";
+import Status from "../components/status";
 
 const Pedidos = () => {
   return (
-    <View>
-      <Text>Pedidos</Text>
-    </View>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <Status />
+      <HeaderFooterCard />
+      <HeaderFooterCard />
+      <HeaderFooterCard />
+      <HeaderFooterCard />
+    </ScrollView>
   );
 };
 

@@ -1,11 +1,36 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, ScrollView } from "react-native";
+import React, { useState } from "react";
+import Card from "../components/card";
+import { Cliente } from "../Interfaces/Cliente";
 
 const Clientes = () => {
+  const [listaClientes, setListaClientes] = useState<Cliente[]>([
+    {
+      cod: 100,
+      nomeFantasia: "Supermercado X",
+      razaoSocial: "Supermecado X e Cia Ltda",
+      endereço: "Rua Simão Dias, 999, Centro - Nossa Senhora da Gloria/SE",
+    },
+    {
+      cod: 111,
+      nomeFantasia: "Supermercado Y",
+      razaoSocial: "Supermecado Y e Cia Ltda",
+      endereço: "Rua Simão Dias, 999, Centro - Nossa Senhora da Gloria/SE",
+    },
+  ]);
+
   return (
-    <View>
-      <Text>Clientes</Text>
-    </View>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      {listaClientes.map((data) => (
+        <Card
+          key={data.cod}
+          cod={data.cod}
+          title={data.nomeFantasia}
+          subtitle={data.razaoSocial}
+          address={data.endereço}
+        />
+      ))}
+    </ScrollView>
   );
 };
 
