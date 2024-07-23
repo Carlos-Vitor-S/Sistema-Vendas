@@ -6,11 +6,15 @@ import Status from "../components/status";
 const Pedidos = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <Status />
-      <HeaderFooterCard />
-      <HeaderFooterCard />
-      <HeaderFooterCard />
-      <HeaderFooterCard />
+      <View style={{ marginTop: 10, marginLeft: 10, marginRight: 10 }}>
+        <Status />
+        <View>
+          <HeaderFooterCard />
+        </View>
+        <HeaderFooterCard />
+        <HeaderFooterCard />
+        <HeaderFooterCard />
+      </View>
     </ScrollView>
   );
 };

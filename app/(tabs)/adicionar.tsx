@@ -1,12 +1,13 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 
+import TopTabsLayout from "../(create)/_layout";
+import { NavigationContainer } from "@react-navigation/native";
+
 const Adicionar = () => {
-  return (
-    <View>
-      <Text style={{ backgroundColor: "blue" }}>Adicionar</Text>
-    </View>
-  );
+  return <TopTabsLayout />;
 };
 
 export default Adicionar;
+
+const styles = StyleSheet.create({});

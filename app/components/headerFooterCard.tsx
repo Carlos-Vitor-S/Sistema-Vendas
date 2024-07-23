@@ -61,7 +61,7 @@ export default HeaderFooterCard;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10,
+    marginBottom: 10,
     borderRadius: borderRadiusNumber,
     backgroundColor: globalStyles.fontColors.headerFontColor,
 

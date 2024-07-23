@@ -11,6 +11,7 @@ export default function Index() {
       <View style={styles.content}>
         <Link href={"(tabs)/catalogo"}>Ir para Tabs (Tabs) </Link>
         <Link href={"(auth)/login"}>Ir para Logins (Auth) </Link>
+        <Link href={"(create)/novoCliente"}>Ir para create (create) </Link>
       </View>
     </SafeAreaView>
   );

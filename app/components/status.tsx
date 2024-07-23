@@ -1,11 +1,25 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, PixelRatio, StyleSheet, Text, View } from "react-native";
 
 import React from "react";
 import globalStyles from "../styles/globalStyles";
 import { useWindowDimensions } from "react-native";
+//Responsividade das Fontes
+const fontScale = PixelRatio.getFontScale();
+const getFontSize = (size: number) => size / fontScale;
+
 const Status = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image
+          source={require("../../assets/confirmStatus.png")}
+          style={{ width: 50, height: 50 }}
+        />
+        <Text style={styles.statusText}>Finalizado</Text>
+      </View>
+
+      <View style={styles.separator}></View>
+
       <View style={styles.imageContainer}>
         <Image
           source={require("../../assets/pendingStatus.png")}
@@ -14,13 +28,8 @@ const Status = () => {
         <Text style={styles.statusText}>Andamento</Text>
       </View>
 
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("../../assets/confirmStatus.png")}
-          style={{ width: 50, height: 50 }}
-        />
-        <Text style={styles.statusText}>Finalizado</Text>
-      </View>
+      <View style={styles.separator}></View>
+
       <View style={styles.imageContainer}>
         <Image
           source={require("../../assets/cancelStatus.png")}
@@ -38,19 +47,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
 
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: globalStyles.fontColors.headerFontColor,
+    marginBottom: 10,
+    elevation: 5,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 1.5 },
     shadowOpacity: 0.1,
     shadowRadius: 1,
-    elevation: 5,
-    padding: 10,
-    borderRadius: 8,
-    backgroundColor: globalStyles.fontColors.headerFontColor,
-    marginLeft: 10,
-    marginTop: 10,
-    marginRight: 10,
   },
 
   imageContainer: {
@@ -60,13 +67,20 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     marginLeft: 10,
     marginRight: 10,
-    borderRightColor: "red",
   },
 
   statusText: {
-    padding: 2,
-    marginTop: 5,
     fontFamily: "GothicA1_500Medium",
     color: globalStyles.fontColors.lighterFontColor,
+    fontSize: getFontSize(12),
+    padding: 2,
+    marginTop: 4,
+  },
+
+  separator: {
+    height: "100%",
+    borderRightWidth: 1,
+    marginHorizontal: 10,
+    borderRightColor: globalStyles.colors.separatorColor,
   },
 });

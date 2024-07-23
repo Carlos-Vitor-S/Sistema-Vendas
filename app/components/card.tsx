@@ -16,7 +16,7 @@ const fontScale = PixelRatio.getFontScale();
 const getFontSize = (size: number) => size / fontScale;
 
 //border radius
-const borderRadiusNumber = 9;
+const borderRadiusNumber = 8;
 
 //Props do card usando a interface card
 const Card: React.FC<cardProps> = ({ cod, title, subtitle, address }) => {
@@ -33,7 +33,7 @@ const Card: React.FC<cardProps> = ({ cod, title, subtitle, address }) => {
             <View style={styles.cardAddressContainer}>
               <Ionicons
                 name="location-outline"
-                size={15}
+                size={getFontSize(15)}
                 color={globalStyles.fontColors.darkFontColor}
               />
               <Text style={styles.cardAddress}>{address}</Text>
@@ -55,8 +55,7 @@ const styles = StyleSheet.create({
     alignContent: "flex-start",
     justifyContent: "flex-start",
 
-    margin: 10,
-    marginBottom: 0,
+    marginBottom: 10,
 
     borderRadius: borderRadiusNumber,
     shadowColor: "#000",
