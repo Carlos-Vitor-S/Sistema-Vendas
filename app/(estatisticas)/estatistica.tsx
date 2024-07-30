@@ -2,19 +2,15 @@ import {
   PixelRatio,
   ScrollView,
   StyleSheet,
-  Text,
   useWindowDimensions,
   View,
 } from "react-native";
 import React from "react";
-import globalStyles from "../styles/globalStyles";
-import {
-  GothicA1_600SemiBold,
-  GothicA1_700Bold,
-} from "@expo-google-fonts/gothic-a1";
+
 import InfoCard from "../components/infoCard";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 import SeparatorText from "../components/listLayout";
+import ListLayout from "../components/listLayout";
 
 const Estatisticas = () => {
   //Responsividade das Fontes
@@ -22,14 +18,15 @@ const Estatisticas = () => {
   const getFontSize = (size: number) => size / fontScale;
   //Responsividade Margem
   const { width, height } = useWindowDimensions();
-  const reponsiveMargin = height * 0.08;
+  const reponsiveMargin = height * 0.06;
   return (
     <>
       <InfoCard />
-      <View style={{ flex: 4, marginTop: reponsiveMargin }}>
+      <View style={{ flex: 4, marginTop: reponsiveMargin, padding: 10 }}>
         <ScrollView>
           <View style={styles.container}>
-            <SeparatorText />
+            <ListLayout />
+            <ListLayout />
           </View>
         </ScrollView>
       </View>
