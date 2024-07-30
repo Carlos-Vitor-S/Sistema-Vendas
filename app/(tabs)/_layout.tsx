@@ -24,6 +24,7 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import TopTabsLayoutE from "../(estatisticas)/_layout";
 
 //Responsividade das Fontes
 const fontScale = PixelRatio.getFontScale();
@@ -175,6 +176,7 @@ const TabsLayout = () => {
           name="pedidos"
           options={{
             title: "Pedidos",
+
             tabBarIcon: ({ color, focused, size }) => {
               if (focused) {
                 return (
@@ -193,28 +195,22 @@ const TabsLayout = () => {
           name="estatisticas"
           options={{
             title: "Estatisticas",
-
+            //headerTitle: "Estatisticas",
             headerStyle: {
-              backgroundColor: "transparent",
+              backgroundColor: globalStyles.colors.primaryColor,
               height: headerHeight,
-              borderBottomRightRadius: 15,
-              borderBottomLeftRadius: 15,
-              elevation: 5,
-              shadowColor: "#000",
-              shadowOffset: { width: 1, height: 1 },
-              shadowOpacity: 0.4,
-              shadowRadius: 2,
+              borderWidth: 0,
+              borderBottomColor: "red",
+              borderBottomWidth: 0,
+              elevation: 0,
+              shadowOpacity: 0,
             },
-            headerBackground: () => (
-              <View
-                style={{
-                  flex: 1,
-                  backgroundColor: globalStyles.colors.primaryColorLight,
-                }}
-              >
-                <View style={styles.headerBackgroundWhite} />
-              </View>
-            ),
+
+            headerTitleStyle: {
+              marginTop: headerHeight / 2.5,
+              fontFamily: "GothicA1_700Bold",
+              fontSize: getFontSize(20),
+            },
 
             tabBarIcon: ({ color, focused, size }) => {
               if (focused) {

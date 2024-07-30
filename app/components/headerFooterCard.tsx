@@ -8,14 +8,17 @@ import {
 import React from "react";
 import globalStyles from "../styles/globalStyles";
 import { Ionicons } from "@expo/vector-icons";
+import { Link, useRouter } from "expo-router";
 //border radius geral
 const borderRadiusNumber = 10;
 //Responsividade das Fontes
 const fontScale = PixelRatio.getFontScale();
 const getFontSize = (size: number) => size / fontScale;
+
 const HeaderFooterCard = () => {
+  const router = useRouter();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => router.push("/DescricaoCliente")}>
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <Text style={styles.textDate}>Feito: 20/09/09</Text>
@@ -24,7 +27,6 @@ const HeaderFooterCard = () => {
         <View style={styles.cardDescription}>
           <View style={styles.cardDescriptionTop}>
             <Text style={styles.cardTitle}>Supermercado X</Text>
-
             <View style={styles.codContainer}>
               <Text style={styles.codText}>Cod 100</Text>
             </View>
